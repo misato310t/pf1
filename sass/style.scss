@@ -89,7 +89,7 @@ a{
     z-index: 5;
     width: 100%;
     &.is-white{
-       background-color:rgb(109, 103, 103); 
+       background-color:rgb(228, 224, 224); 
        color: white;
     }
     @include mq(sp) {
@@ -120,6 +120,9 @@ a{
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
+    @include mq(tab){
+        display: none;
+    }
     @include mq(sp) {
        display: none; 
     }
@@ -148,6 +151,10 @@ a{
     @include mq(sp) {
        width: 90%;
        left: 15px;
+    }
+    @include mq(tab) {
+      bottom: 37%; 
+      left: 48%; 
     }
 }
 
@@ -209,6 +216,10 @@ a{
         }
     }
     display: none;
+    @include mq(tab) {
+       display: block;
+       right: 20px; 
+    }
     @include mq(sp) {
        display: block; 
     }
@@ -217,6 +228,10 @@ a{
     width: 26px;
     height: 20px;
     position: relative;
+    @include mq(tab) {
+        width: 36px;
+        height: 36px;
+    }
 }
 
 .drawer-icon-bar1,.drawer-icon-bar2,.drawer-icon-bar3{
@@ -226,14 +241,23 @@ a{
     background:$color-text;
     top: 0;
     border-radius: 10px;
+    @include mq(tab) {
+        width: 36px;
+    }
 }
 
 .drawer-icon-bar2{
     top: 8px;
+    @include mq(tab) {
+        top: 10px;
+    }
 }
 
 .drawer-icon-bar3{
     top: 16px;
+    @include mq(tab) {
+        top: 20px;
+    }
 }
 
 .drawer-content{
@@ -292,10 +316,14 @@ a{
     margin:120px auto;
     background-color: white;
     box-shadow: 0px 5px 12px #3E3E3E33;
+    @include mq(tab) {
+       width: 100%;
+       margin: 60px auto; 
+    }
     @include mq(sp) {
         padding: 0 12px; 
-        width: 90%;
-        margin-top: 0;
+        width: 92%;
+        margin: 0 auto;
         position: absolute;
         top: -50px;
     }
@@ -335,10 +363,17 @@ a{
          transform: translateY(-50%); 
          left: 95%;
       }
+      @include mq(tab) {
+          left: 94%;
+          top: 40%;
+      }
     }
     @include mq(sp) {
        display: block; 
        width: 100%; 
+    }
+    @include mq(tab) {
+        padding: 40px 20px;
     }
 }
 
@@ -362,7 +397,8 @@ a{
         transform: translate(-50%,-50%);
     }
     @include mq(sp) {
-       width: 100%; 
+       width: 100%;
+       margin-left: 1em; 
     }
 }
 
@@ -394,6 +430,7 @@ a{
         font-size: 14px;
         line-height: 1.42;
         margin-top: 20px; 
+        padding-right: 10%;
      }
 }
 
@@ -413,6 +450,9 @@ a{
         @include mq(sp) {
            padding: 14px 80px; 
         }
+    }
+    @include mq(sp) {
+        width: 100%;
     }
     @include mq(sp) {
         width: 100%;
@@ -580,13 +620,16 @@ a{
     width: 289px;
     margin-left: 60px;
     margin-top: 100px;
+    text-align: center;
 
     @include mq(sp) {
-        margin-top: 70px; 
-       padding: 16px 100px; 
-       width: 316px;
-       margin: 70px auto;
+       margin: 40px auto 0; 
     }
+     a{
+         @include mq(sp) {
+             
+            }
+        }
 }
 
 .price{
@@ -594,7 +637,11 @@ a{
 
     @include mq(sp) {
        padding-top: 20px; 
-       height: 460px;
+    //    height: 460px;
+       height: auto;
+    }
+    @include mq(tab) {
+       height: 452px; 
     }
 
 }
@@ -603,9 +650,17 @@ a{
     margin: 0 auto;
     border: 1px solid #707070 ;
     border-collapse: collapse;
+    width: 1000px;
+    @include mq(tab) {
+        width: 100%;
+    }
+    @include mq(sp) {
+       width: 100%; 
+    }
+    
 
     th{
-        width: 262px;
+        width: 25%;
         border: 1px solid #707070 ;
         height: 61px;
         background-color: #3E3E3E;
@@ -621,7 +676,7 @@ a{
     }
 
     td{
-        width: 700px;
+        width: 75%;
         border: 1px solid #707070 ;
         height: 61px;
         background-color: white;
@@ -646,20 +701,22 @@ a{
     @include mq(sp) {
         width: 100%;
     }
+    @include mq(tab) {
+        width: 100%;
+    }
 }
 
 .price-text{
     font-size: 12px;
-    padding-top: 5px;
-    position: absolute;
-    top: 190px;
-    left: 0;
+    padding-top: 10px;
 }
 
 .comment{
     padding-bottom: 115px;
     @include mq(sp) {
-       padding-bottom: 50px; 
+        padding: 50px 0; 
+    }
+    @include mq(tab) {
     }
 }
 
@@ -670,6 +727,9 @@ a{
    @include mq(sp) {
       height: 30px; 
    }
+   @include mq(tab) {
+      display: none; 
+   }
 }
 
 .comment-back2{
@@ -678,9 +738,11 @@ a{
   height: 576px;
   position: relative;
 
+  @include mq(tab) {
+      display: none;
+  }
   @include mq(sp) {
-     width: 100%; 
-     height: 425px;
+      display: none;
   }
 }
 
@@ -693,8 +755,13 @@ a{
   position: relative;
   box-shadow: 0px 0 px 10px #00000029;
   @include mq(sp) {
+      height: 450px;
       width: 100%;
-     height: 425px; 
+  }
+  @include mq(tab) {
+      width: 100%;
+      margin: 0 auto;
+      height: 500px;
   }
 }
 
@@ -707,10 +774,16 @@ a{
     font-family: $font-family;
 
     @include mq(sp) {
-       top: 30px;
-       left: 20px;
-       font-size: 30px; 
+       top: 10px;
+       left: 50%;
+       transform: translateX(-50%);
+       font-size: 30px;
     }
+
+    @include mq(tab) {
+       top: 50px; 
+    }
+
 }
 
 .comment3{
@@ -722,6 +795,9 @@ a{
     @include mq(sp) {
        display: none; 
     }
+    @include mq(tab) {
+       display: none; 
+    }
 }
 
 .comment-items-wrap{
@@ -729,8 +805,10 @@ a{
     margin-top: -60%;
     @include mq(sp) {
        display: block; 
-       margin-top: -140%;
-
+       margin-top:0;
+    }
+    @include mq(tab) {
+       margin-top: 0; 
     }
 }
 
@@ -740,9 +818,14 @@ a{
     transform: translateY(127%);
 
     @include mq(sp) {
-        padding: 0 20px;
+        display: block;
+        padding: 0 ;
         width: 100%;
-       transform: translateY(80%);
+       transform: translateY(39%);
+       text-align: center;
+    }
+    @include mq(tab) {
+       transform: translateY(90%); 
     }
 }
 
@@ -765,10 +848,9 @@ a{
 
     @include mq(sp) {
         font-size: 14px;
-        width: calc(100% - 60px);
-        margin-bottom: 30px ;
-        margin-left: 20px;
-        
+        width: 90%;
+        margin: 10px auto ;
+        text-align: left;
     }
 }
 
@@ -781,6 +863,9 @@ a{
        height: 750px; 
        background-position: -300px ;
     }
+    @include mq(tab) {
+       height: 800px; 
+    }
 }
 
 .qa-content{
@@ -792,6 +877,11 @@ a{
        transform: none;
        margin: 0 auto;
     }
+    @include mq(tab) {
+       width: 90%;
+       transform: none;
+       margin: 0 auto; 
+    }
 }
 
 .qa-items{
@@ -800,6 +890,9 @@ a{
     margin-bottom: 20px;
     border-radius: 4px;
     position: relative;
+    @include mq(tab) {
+       padding: 15px 10px; 
+    }
 
     span{
         display: inline-block;
@@ -814,7 +907,21 @@ a{
         position: absolute;
         left: 5%;
      }
- 
+     &::after{
+        content: "";
+        position: absolute;
+        width: 17px;
+        height: 17px;
+        background: url(../img/minus.png) no-repeat;
+        background-size: contain;
+        right: 6%;
+        top: 50%;
+        transform: translateY(-50%);
+        @include mq(sp) {
+        }
+        @include mq(tab) {
+        }
+    }
 
    &:hover{
        cursor: pointer;
@@ -823,10 +930,7 @@ a{
 }
 
 
-.qa-q-wrap{
-    display: flex;
-
-}
+ 
 
 .qa-q{
     display: inline-block;
@@ -835,22 +939,13 @@ a{
     max-width: 180px;
     margin-left: 60px;
     position: relative;
-    &::after{
-        content: "";
-        position: absolute;
-        width: 17px;
-        height: 17px;
-        background: url(../img/minus.png) no-repeat;
-        background-size: contain;
-        left:487px ;
-        top: 50%;
-        transform: translateY(-50%);
-        @include mq(sp) {
-           left: 225px; 
-        }
-    }
+    
    @include mq(sp) {
       margin-left: 40px; 
+      max-width: 200px;
+   }
+   @include mq(tab) {
+      max-width: 500px; 
    }
 }
 
@@ -864,7 +959,9 @@ a{
     left: 487px;
     top: 50%;
     transform: translateY(-50%);
-
+    @include mq(tab) {
+       left: 225px; 
+    } 
     @include mq(sp) {
        left: 225px; 
     }
@@ -885,6 +982,9 @@ a{
        height: 650px; 
        width: 100%;
     }
+    @include mq(tab) {
+       height: 1000px; 
+    }
 }
 
 .access-back{
@@ -896,6 +996,10 @@ a{
     @include mq(sp) {
        width: 100%; 
        height: 650px;
+    }
+    @include mq(tab) {
+       width: 100%; 
+       height: 1000px;
     }
 }
 
@@ -914,6 +1018,10 @@ a{
        font-size: 30px;
        position: static;
        padding: 40px 20px;
+    }
+    @include mq(tab) {
+       left: 5%; 
+       top: 5%;
     }
 
 }
@@ -934,6 +1042,11 @@ a{
        position: static; 
        padding-left: 20px;
     }
+
+    @include mq(tab) {
+        top: 15%;
+        left: 5%;
+    }
 }
 
 .access-button{
@@ -952,13 +1065,17 @@ a{
     @include mq(sp) {
        top: 530px; 
        padding: 16px 30px; 
-       width: 316px;
+       width: 80%;
        margin: 0 auto;
+    }
+    @include mq(tab) {
+       top: 78%; 
+       left: 50%;
+       transform: translateX(-50%);
+       margin-left: 0;
     }
 
 }
-
-
 
 .access-map{
     position: relative;
@@ -974,6 +1091,11 @@ a{
         width: 90%;
         margin: 0 auto;
         transform: translateY(42px);
+    }
+    @include mq(tab) {
+        top: 30%;
+        left: 50%;
+        transform: translateX(-50%);
     }
 }
 
@@ -1001,6 +1123,9 @@ a{
     @include mq(sp) {
        padding-top: 30px;
     }
+    @include mq(tab) {
+        padding-top: 0;
+    }
 }
 
 .contact-head-wrap{
@@ -1014,11 +1139,12 @@ a{
         height: 163px;
         border-radius: 10px 10px 0 0;
     }
+    @include mq(tab) {
+        width: 100%;
+        background-size: cover;
+    }
 }
 
-.contact-head{
-
-}
 
 .contact-title{
     color: white;
@@ -1041,7 +1167,7 @@ a{
 
     @include mq(sp) {
         font-size: 14px;
-        width: 311px;
+        width: 80%;
         text-align: left;
         margin: 0 auto;
     }
@@ -1060,12 +1186,20 @@ a{
         padding-top: 30px;
         height: 830px;
     }
+    @include mq(tab) {
+       width: 95%; 
+       padding: 30px 20px;
+       border-radius: 12px;
+    }
 }
 
 form{
     max-width: 770px;
     @include mq(sp) {
         padding: 0 10px;
+        width: 100%;
+    }
+    @include mq(tab) {
         width: 100%;
     }
 }
@@ -1077,6 +1211,9 @@ form{
     @include mq(sp) {
        padding: 0 10px; 
        width: 100%;
+    }
+    @include mq(tab) {
+        
     }
 }
 
@@ -1312,6 +1449,10 @@ footer{
     @include mq(sp) {
         display: block;
        width: 100%; 
+    }
+    @include mq(tab) {
+        width: 100%;
+        padding: 0 20px;
     }
     
 }
