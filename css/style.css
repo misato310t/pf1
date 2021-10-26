@@ -170,7 +170,7 @@ a {
 
 @media (min-width: 768px) and (max-width: 1200px) {
   .top-content {
-    bottom: 37%;
+    bottom: 11%;
     left: 48%;
   }
 }
@@ -921,8 +921,8 @@ a {
   background-color: white;
   z-index: 3;
   position: relative;
-  -webkit-box-shadow: 0px 0 px 10px #00000029;
-          box-shadow: 0px 0 px 10px #00000029;
+  -webkit-box-shadow: 0px 0px 10px #00000029;
+          box-shadow: 0px 0px 10px #00000029;
 }
 
 @media screen and (max-width: 767px) {
@@ -1538,7 +1538,6 @@ form {
 
 @media screen and (max-width: 767px) {
   .label {
-    widows: 128px;
     margin: 10px  0 10px;
     font-size: 16px;
   }
